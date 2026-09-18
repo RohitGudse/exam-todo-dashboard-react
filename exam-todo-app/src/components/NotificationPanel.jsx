@@ -1,9 +1,21 @@
+import React from "react";
+
 const NotificationPanel = () => {
+  const notificationCount = 3;
+
   return (
-    <div className="card">
-      <h3>Notifications</h3>
-      <p>3 New Notifications</p>
-    </div>
+    <section className="card" aria-label="Notifications">
+      <div className="card-header">
+        <h3>Notifications</h3>
+        <span className="notification-badge">
+          {notificationCount}
+        </span>
+      </div>
+
+      <p>
+        You have {notificationCount} new notifications.
+      </p>
+    </section>
   );
 };
 
