@@ -1,10 +1,24 @@
+import React from "react";
+
+const examStats = [
+  { label: "Total Exams", value: 25 },
+  { label: "Completed", value: 18 },
+];
+
 const ExamStats = () => {
   return (
-    <div className="card">
+    <section className="card">
       <h3>Exam Statistics</h3>
-      <p>Total Exams: 25</p>
-      <p>Completed: 18</p>
-    </div>
+
+      <div className="exam-stats">
+        {examStats.map(({ label, value }) => (
+          <div className="stat-item" key={label}>
+            <span>{label}</span>
+            <strong>{value}</strong>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
