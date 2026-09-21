@@ -1,13 +1,20 @@
 const RecentExams = () => {
+  const exams = [
+    { id: 1, name: "React Test" },
+    { id: 2, name: "JavaScript Quiz" },
+    { id: 3, name: "Node.js Assessment" },
+  ];
+
   return (
-    <div className="card">
+    <section className="card">
       <h3>Recent Exams</h3>
+
       <ul>
-        <li>React Test</li>
-        <li>JavaScript Quiz</li>
-        <li>Node.js Assessment</li>
+        {exams.map(({ id, name }) => (
+          <li key={id}>{name}</li>
+        ))}
       </ul>
-    </div>
+    </section>
   );
 };
 
