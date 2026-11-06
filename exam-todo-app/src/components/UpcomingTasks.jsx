@@ -1,12 +1,24 @@
+
+import React from "react";
+
 const UpcomingTasks = () => {
+  const tasks = [
+    "Complete React Project",
+    "Prepare for Exam"
+  ];
+
   return (
-    <div className="card">
+    <section className="card">
       <h3>Upcoming Tasks</h3>
+
       <ul>
-        <li>Complete React Project</li>
-        <li>Prepare for Exam</li>
+        {tasks.map((task, index) => (
+          <li key={index}>
+            {task}
+          </li>
+        ))}
       </ul>
-    </div>
+    </section>
   );
 };
 
