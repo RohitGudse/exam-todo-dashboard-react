@@ -1,20 +1,34 @@
 
 import React from "react";
 
-const QuickActions = () => {
-  const actions = ["Add Task", "Create Exam"];
+const quickActions = [
+  {
+    id: 1,
+    label: "Add Task",
+  },
+  {
+    id: 2,
+    label: "Create Exam",
+  },
+];
+
+function QuickActions() {
+  const renderActions = () => {
+    return quickActions.map(({ id, label }) => (
+      <button key={id} type="button" className="quick-action-btn">
+        {label}
+      </button>
+    ));
+  };
 
   return (
-    <div className="card">
+    <section className="card">
       <h3>Quick Actions</h3>
-
-      {actions.map((action, index) => (
-        <button key={index} type="button">
-          {action}
-        </button>
-      ))}
-    </div>
+      <div className="quick-actions-list">
+        {renderActions()}
+      </div>
+    </section>
   );
-};
+}
 
 export default QuickActions;
